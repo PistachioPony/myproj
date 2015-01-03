@@ -19,32 +19,42 @@ MONGODB_URI = creds.login
 # main
 #-----------------------------------------
 
-def main(args):
+# def main(args):
 
-    client = pymongo.MongoClient(MONGODB_URI)
+#     client = pymongo.MongoClient(MONGODB_URI)
 
-    db = client.get_default_database()
+#     db = client.get_default_database()
 
-    perfumes = db['perfumes']
+#     perfumes = db['perfumes']
 
-    example = perfumes.find_one({"name":"888"})
+#     example = perfumes.find_one({"name":"888"})
 
-    context = {'example': example}
+#     context = {'example': example}
 
-    return render_template('index.html', **context)
+#     return render_template('index.html', **context)
 
 
 #----------------------------------------
 # controllers
 #----------------------------------------
 
-    # @app.errorhandler(404)
-    # def page_not_found(e):
-    #     return render_template('404.html'), 404
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
 
-    # @app.route("/")
-    # def index():
-    #     return render_template('index.html')
+    @app.route("/")
+    def index():
+      # client = pymongo.MongoClient(MONGODB_URI)
+
+      # db = client.get_default_database()
+
+      # perfumes = db['perfumes']
+
+      # example = perfumes.find_one({"name":"888"})
+
+      # context = {'example': example}
+      
+      return render_template('index.html')
 #----------------------------------------
 # launch
 #----------------------------------------
@@ -52,8 +62,8 @@ def main(args):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    # main(sys.argv[1:])
 
     # below is to run it locally
-    # port = int(os.environ.get("PORT", 5000))
-    # app.run(host='0.0.0.0', port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
