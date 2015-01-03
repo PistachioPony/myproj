@@ -19,15 +19,12 @@ MONGODB_URI = creds.login
 # main
 #-----------------------------------------
 
-def main(args):
 
-    client = pymongo.MongoClient(MONGODB_URI)
+client = pymongo.MongoClient(MONGODB_URI)
 
-    db = client.get_default_database()
+db = client.get_default_database()
 
-    perfumes = db['perfumes']
-
-    app.index()
+perfumes = db['perfumes']
 
 
 #----------------------------------------
@@ -46,7 +43,7 @@ def index():
 #----------------------------------------
 
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    app.run(sys.argv[1:])
     
 
     # below is to run it locally
