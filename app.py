@@ -27,6 +27,10 @@ def main(args):
 
     perfumes = db['perfumes']
 
+    @app.route("/")
+    def index():
+        return render_template('index.html')
+
 #----------------------------------------
 # controllers
 #----------------------------------------
