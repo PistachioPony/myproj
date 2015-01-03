@@ -15,7 +15,7 @@ app.config.update(
     DEBUG = True,
 )
 
-MONGODB_URI = creds.login['mongodb_uri']
+MONGODB_URI = credentials.creds.login['mongodb_uri']
 
 #-----------------------------------------
 # main
