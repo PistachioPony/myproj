@@ -15,24 +15,6 @@ app.config.update(
 )
 
 MONGODB_URI = creds.login
-#-----------------------------------------
-# main
-#-----------------------------------------
-
-# def main(args):
-
-#     client = pymongo.MongoClient(MONGODB_URI)
-
-#     db = client.get_default_database()
-
-#     perfumes = db['perfumes']
-
-#     example = perfumes.find_one({"name":"888"})
-
-#     context = {'example': example}
-
-#     return render_template('index.html', **context)
-
 
 #----------------------------------------
 # controllers
@@ -55,6 +37,7 @@ def index():
   context = {'example': example}
   
   return render_template('index.html', **context)
+  
 #----------------------------------------
 # launch
 #----------------------------------------
