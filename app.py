@@ -44,15 +44,15 @@ def page_not_found(e):
 
 @app.route("/")
 def index():
-  # client = pymongo.MongoClient(MONGODB_URI)
+  client = pymongo.MongoClient(MONGODB_URI)
 
-  # db = client.get_default_database()
+  db = client.get_default_database()
 
-  # perfumes = db['perfumes']
+  perfumes = db['perfumes']
 
-  # example = perfumes.find_one({"name":"888"})
+  example = perfumes.find_one({"name":"888"})
 
-  # context = {'example': example}
+  context = {'example': example}
   
   return render_template('index.html')
 #----------------------------------------
@@ -64,6 +64,5 @@ def index():
 if __name__ == '__main__':
     # main(sys.argv[1:])
 
-    # below is to run it locally
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
