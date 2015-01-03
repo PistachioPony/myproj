@@ -29,7 +29,9 @@ def main(args):
 
     example = perfumes.find_one({"name":"888"})
 
-    print example
+    context = {'example': example}
+
+    return render_template('index.html')
 
 
 #----------------------------------------
