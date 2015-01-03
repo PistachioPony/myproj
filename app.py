@@ -10,9 +10,9 @@ __author__ = 'mongolab'
 
 app = Flask(__name__)
 
-app.config.update(
-    DEBUG = True,
-)
+# app.config.update(
+#     DEBUG = True,
+# )
 
 MONGODB_URI = creds.login
 #-----------------------------------------
@@ -31,19 +31,21 @@ perfumes = db['perfumes']
 # controllers
 #----------------------------------------
 
+@app.route("/")
+def index():
+    return render_template('index.html')
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@app.route("/")
-def index():
-    return render_template('index.html')
+
 #----------------------------------------
 # launch
 #----------------------------------------
 
 if __name__ == '__main__':
-    app.run(sys.argv[1:])
+    app.run(debug=True)
     
 
     # below is to run it locally
