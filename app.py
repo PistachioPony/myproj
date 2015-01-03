@@ -54,7 +54,7 @@ def index():
 
   context = {'example': example}
   
-  return render_template('index.html')
+  return render_template('index.html', **context)
 #----------------------------------------
 # launch
 #----------------------------------------
