@@ -27,7 +27,6 @@ def main(args):
 
     perfumes = db['perfumes']
 
-    return index()
 
 #----------------------------------------
 # controllers
