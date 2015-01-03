@@ -2,7 +2,7 @@ import os
 import sys
 import pymongo
 from flask import Flask, render_template, send_from_directory
-import credentials 
+from myproj.credentials import credentials 
 
 #----------------------------------------
 # initialization
