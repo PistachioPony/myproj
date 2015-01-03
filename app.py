@@ -44,7 +44,9 @@ def index():
 #----------------------------------------
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+  app.run()
+    
+    # main(sys.argv[1:])
 
     # below is to run it locally
     # port = int(os.environ.get("PORT", 5000))
