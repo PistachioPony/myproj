@@ -2,7 +2,7 @@ import os
 import sys
 import pymongo
 from flask import Flask, render_template, send_from_directory
-import credentials
+from flask import credentials
 
 #----------------------------------------
 # initialization
@@ -46,7 +46,7 @@ def index():
 
 if __name__ == "__main__":
     main(sys.argv[1:])
-    
+
     # below is to run it locally
     # port = int(os.environ.get("PORT", 5000))
     # app.run(host='0.0.0.0', port=port)
