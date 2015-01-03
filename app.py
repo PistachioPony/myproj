@@ -27,7 +27,7 @@ def main(args):
 
     perfumes = db['perfumes']
 
-    index()
+    app.index()
 
 
 #----------------------------------------
