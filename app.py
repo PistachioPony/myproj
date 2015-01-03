@@ -27,27 +27,30 @@ def main(args):
 
     perfumes = db['perfumes']
 
-  
+    example = perfumes.find({"name":"888"})
+
+    print example
 
 
 #----------------------------------------
 # controllers
 #----------------------------------------
 
-    @app.errorhandler(404)
-    def page_not_found(e):
-        return render_template('404.html'), 404
+    # @app.errorhandler(404)
+    # def page_not_found(e):
+    #     return render_template('404.html'), 404
 
-    @app.route("/")
-    def index():
-        return render_template('index.html')
+    # @app.route("/")
+    # def index():
+    #     return render_template('index.html')
 #----------------------------------------
 # launch
 #----------------------------------------
+client.close()
+
 
 if __name__ == '__main__':
     main(sys.argv[1:])
-    
 
     # below is to run it locally
     # port = int(os.environ.get("PORT", 5000))
