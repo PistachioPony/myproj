@@ -27,7 +27,7 @@ def main(args):
 
     perfumes = db['perfumes']
 
-    example = perfumes.find({"name":"888"})
+    example = perfumes.find_one({"name":"888"})
 
     print example
 
