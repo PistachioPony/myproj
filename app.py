@@ -44,7 +44,8 @@ def index():
 #----------------------------------------
 
 if __name__ == "__main__":
-  app.run()
+
+  main(sys.argv[1:])
     
     # main(sys.argv[1:])
 
