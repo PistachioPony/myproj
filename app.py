@@ -27,6 +27,8 @@ def main(args):
 
     perfumes = db['perfumes']
 
+    index()
+
 
 #----------------------------------------
 # controllers
@@ -43,11 +45,9 @@ def index():
 # launch
 #----------------------------------------
 
-if __name__ == "__main__":
-
-  main(sys.argv[1:])
+if __name__ == '__main__':
+    main(sys.argv[1:])
     
-    # main(sys.argv[1:])
 
     # below is to run it locally
     # port = int(os.environ.get("PORT", 5000))
