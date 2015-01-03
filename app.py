@@ -38,23 +38,23 @@ MONGODB_URI = creds.login
 # controllers
 #----------------------------------------
 
-    @app.errorhandler(404)
-    def page_not_found(e):
-        return render_template('404.html'), 404
+@app.errorhandler(404)
+def page_not_found(e):
+  return render_template('404.html'), 404
 
-    @app.route("/")
-    def index():
-      # client = pymongo.MongoClient(MONGODB_URI)
+@app.route("/")
+def index():
+  # client = pymongo.MongoClient(MONGODB_URI)
 
-      # db = client.get_default_database()
+  # db = client.get_default_database()
 
-      # perfumes = db['perfumes']
+  # perfumes = db['perfumes']
 
-      # example = perfumes.find_one({"name":"888"})
+  # example = perfumes.find_one({"name":"888"})
 
-      # context = {'example': example}
-      
-      return render_template('index.html')
+  # context = {'example': example}
+  
+  return render_template('index.html')
 #----------------------------------------
 # launch
 #----------------------------------------
