@@ -2,8 +2,7 @@ import os
 import sys
 import pymongo
 from flask import Flask, render_template, send_from_directory
-from myproj.credentials import credentials 
-
+import creds
 #----------------------------------------
 # initialization
 #----------------------------------------
@@ -15,7 +14,7 @@ app.config.update(
     DEBUG = True,
 )
 
-MONGODB_URI = credentials.creds.login['mongodb_uri']
+MONGODB_URI = creds.login['mongodb_uri']
 
 #-----------------------------------------
 # main
