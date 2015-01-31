@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+
 {% block title %} Home{% endblock %}
 
 {% block content %}
@@ -11,7 +12,9 @@
 
 <h1>Choose Your Weapon</h1>
 
-<h1>{{ example.brand }}</h1>
+{% for note in example.notes %}
+  <h3>{{ note }}</h3>
+{% endfor %}
 
 
 {% endblock %}

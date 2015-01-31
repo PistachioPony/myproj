@@ -3,3 +3,4 @@ venv
 *~
 .DS_Store
 creds.py
+config
