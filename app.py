@@ -1,16 +1,8 @@
 import os
-from os import environ
 import sys
 import pymongo
 from flask import Flask, render_template, send_from_directory
-from flask.ext.stormpath import StormpathManager
-import config
-
-app.config['SECRET_KEY'] = environ.get('SECRET_KEY')
-app.config['STORMPATH_API_KEY_ID'] = environ.get('STORMPATH_API_KEY_ID')
-app.config['STORMPATH_API_KEY_SECRET'] = environ.get('STORMPATH_API_KEY_SECRET')
-app.config['STORMPATH_APPLICATION'] = environ.get('STORMPATH_URL')
-
+import creds
 #----------------------------------------
 # initialization
 #----------------------------------------
@@ -18,13 +10,11 @@ __author__ = 'mongolab'
 
 app = Flask(__name__)
 
-stormpath_manager = StormpathManager(app)
-
 app.config.update(
     DEBUG = True,
 )
 
-MONGODB_URI = config.development.login
+MONGODB_URI = creds.login
 
 #----------------------------------------
 # controllers
