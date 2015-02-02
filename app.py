@@ -2,6 +2,7 @@ import os
 import sys
 import pymongo
 from flask import Flask, render_template, send_from_directory
+from flask.ext.bootstrap import Bootstrap
 import creds
 #----------------------------------------
 # initialization
@@ -9,6 +10,8 @@ import creds
 __author__ = 'mongolab'
 
 app = Flask(__name__)
+
+bootstrap = Bootstrap(app)
 
 app.config.update(
     DEBUG = True,
@@ -32,7 +35,7 @@ def index():
 
   perfumes = db['perfumes']
 
-  example = perfumes.find_one({"name":"888"})
+  example = perfumes.find()
 
   context = {'example': example}
   
