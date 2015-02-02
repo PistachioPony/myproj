@@ -4,7 +4,7 @@ import pymongo
 from flask import Flask, render_template, send_from_directory
 from flask.ext.bootstrap import Bootstrap
 import creds
-from creds import *
+
 #----------------------------------------
 # initialization
 #----------------------------------------
@@ -13,12 +13,13 @@ __author__ = 'mongolab'
 app = Flask(__name__)
 
 bootstrap = Bootstrap(app)
+MONGODB_URI = creds.login
+
 
 app.config.update(
     DEBUG = True,
 )
 
-MONGODB_URI = creds.login
 
 #----------------------------------------
 # controllers
