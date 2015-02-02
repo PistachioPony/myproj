@@ -3,7 +3,7 @@ import sys
 import pymongo
 from flask import Flask, render_template, send_from_directory
 from flask.ext.bootstrap import Bootstrap
-import creds.py
+import creds
 #----------------------------------------
 # initialization
 #----------------------------------------
